@@ -2,26 +2,36 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 11.0.6.
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+# Cordova App
+## Step 0: Set up Andriod Studio SDK in your system.
 
-## Code scaffolding
+## Step 1: Install Cordova globally
+ npm install -g cordova
+	
+## Step 2: Create Angular Project
+	ng new ShareCalculator
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Step 3: Creating a new project (Sepratly)
+	cordova create ShareCalculator com.example.sharecalc ShareCalculator
+	cordova requirements (This will check system requirements)
+	
+## Step 4: Testing the Cordova project
+	cordova platform add browser (Ready for open in browser)
+	cordova run browser (Run in browser)
+	cordova platform add android (Platform add for Android)
 
-## Build
+## Step 5: Merge Angular app with cordova app and build Angular app
+	Setup your publish code dist folder to www folder (angular.json)
+  ng build --prod --aot
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+## Step 6: If Step 4 showing Gradle error then install gradle and setup environment veriables
+  [Download Gradle](https://gradle.org/install/)
+	Under System Variables select Path, then click Edit. Add an entry for C:\Gradle\gradle-7.2\bin. Click OK to save
+	gradle -v
+	
+## Step 7: cordova build android
 
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Step 8: If Step 7 generate .apk file then you can run this file with your mobile or emulator.
+	cordova emulate android
+	
