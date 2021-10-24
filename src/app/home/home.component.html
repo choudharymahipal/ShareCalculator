@@ -1,0 +1,55 @@
+<mat-card>
+    <mat-card-content>
+        <form [formGroup]="form" (ngSubmit)="OnSubmit()">
+            <mat-form-field class="full-width-input">
+                <input matInput placeholder="Today's Price" formControlName="MarketPrice" type="number" required
+                    autocomplete="off">
+                <mat-hint>Enter market price of today.</mat-hint>
+            </mat-form-field>
+            <mat-form-field class="full-width-input">
+                <input matInput placeholder="Buy Price" formControlName="BuyPrice" type="number" required
+                    autocomplete="off">
+                <mat-hint>Enter market price when you bought.</mat-hint>
+            </mat-form-field>
+            <mat-form-field class="full-width-input">
+                <input matInput placeholder="Total Share" formControlName="TotalShare" type="number" required
+                    autocomplete="off">
+                <mat-hint>Enter total share count.</mat-hint>
+            </mat-form-field>
+            <button mat-raised-button color="primary">Calculate</button>
+        </form>
+    </mat-card-content>
+</mat-card>
+
+<mat-card *ngIf="ShowResult">
+    <mat-card-content>
+        <mat-list role="list">
+            <mat-list-item role="listitem">Min Profit At : <span class="example-spacer"></span>
+                <mat-chip-list aria-label="Fish selection">
+                    <mat-chip color="primary" selected>₹ {{MinProfit}}</mat-chip>
+                </mat-chip-list>
+            </mat-list-item>
+            <mat-list-item role="listitem">Groww Comission : <span class="example-spacer"></span>
+                <mat-chip-list aria-label="Fish selection">
+                    <mat-chip color="primary" selected>₹ {{Commission}}</mat-chip>
+                </mat-chip-list>
+            </mat-list-item>
+            <mat-list-item role="listitem">You spend : <span class="example-spacer"></span>
+                <mat-chip-list aria-label="Fish selection">
+                    <mat-chip color="primary" selected>₹ {{YouSpend}}</mat-chip>
+                </mat-chip-list>
+            </mat-list-item>
+
+            <mat-list-item role="listitem">Total Return : <span class="example-spacer"></span>
+                <mat-chip-list aria-label="Fish selection">
+                    <mat-chip color="primary" selected>₹ {{Profit}}</mat-chip>
+                </mat-chip-list>
+            </mat-list-item>
+            <mat-list-item role="listitem">You earn : <span class="example-spacer"></span>
+                <mat-chip-list aria-label="Fish selection">
+                    <mat-chip color="primary" selected>₹ {{YouEarn}}</mat-chip>
+                </mat-chip-list>
+            </mat-list-item>
+        </mat-list>
+    </mat-card-content>
+</mat-card>
