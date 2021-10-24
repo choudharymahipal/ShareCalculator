@@ -5,9 +5,10 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 # Cordova App
 ## Step 0: Set up Andriod Studio SDK in your system.
+  [Download Android Studio](https://bit.ly/3m5WjKu)
 
 ## Step 1: Install Cordova globally
- npm install -g cordova
+  npm install -g cordova
 	
 ## Step 2: Create Angular Project
 	ng new ShareCalculator
@@ -26,12 +27,16 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
   ng build --prod --aot
 
 ## Step 6: If Step 4 showing Gradle error then install gradle and setup environment veriables
-  [Download Gradle](https://gradle.org/install/)
+  [Download Gradle](https://bit.ly/3nofjDn)
 	Under System Variables select Path, then click Edit. Add an entry for C:\Gradle\gradle-7.2\bin. Click OK to save
 	gradle -v
 	
-## Step 7: cordova build android
+## Step 7: Generate apk file using Cordova. 
+  cordova build android
 
 ## Step 8: If Step 7 generate .apk file then you can run this file with your mobile or emulator.
 	cordova emulate android
+  
+## Check Cordova offical documentation.
+  [Cordova Offical Website](https://cordova.apache.org/)
 	
